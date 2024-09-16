@@ -66,12 +66,32 @@ header nav {
 
 header nav a {
   color: #fff;
+  position: relative;
+  text-decoration: none !important;
+}
+
+header nav a:hover:after, header nav a.active:after {
+  /* Pseudo elements REQUIRE that you set the content property */
+  content: '';
+  background: #fff;
+  border-radius: 10px;
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
 }
 
 /* Select all links with the nav except the last one */
 header nav a:not(:last-child) {
   margin-right: 10px;
 }
+
+/* Position relative allows you to move an element from it's original/current position and not affect the elements around it */
+/* header nav a:first-child {
+  position: relative;
+  top: 50px;
+} */
 
 main {
   display: flex;
@@ -145,6 +165,22 @@ footer {
   background: #4f547bde;
   padding: 30px 7%;
   color: #bbb;
+}
+
+.chat {
+  position: fixed;
+  bottom: 30px;
+  right: 50px;
+  z-index: 500;
+}
+
+.chat button {
+  background: rgba(0, 0, 0, .8);
+  border: 2px solid var(--green);
+  padding: 7px 15px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /* MEDIA QUERIES */
