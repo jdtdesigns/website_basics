@@ -3,12 +3,18 @@
   --green: #28ff8a;
 }
 
+html, body {
+  height: 100%;
+}
+
 /* RESETS */
 body {
   background: #1f222fde;
   margin: 0;
   font-family: sans-serif;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 h3 {
@@ -71,6 +77,10 @@ main {
   display: flex;
   justify-content: space-between;
   padding: 45px 3% 0 10%;
+  background-image: linear-gradient(rgba(20, 20, 62, 0.2), rgba(20, 20, 62, 0.2)), url(../images/me_flipped.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex: 1;
 }
 
 section p {
@@ -129,3 +139,26 @@ aside i {
   margin-right: 8px;
 }
 
+footer {
+  display: flex;
+  justify-content: space-between;
+  background: #4f547bde;
+  padding: 30px 7%;
+  color: #bbb;
+}
+
+/* MEDIA QUERIES */
+/* max-width works for screens at the size and below */
+ /* min-width works for screens at the size and above */
+@media (max-width: 700px) {
+  main {
+    background-position: right;
+    background-image: linear-gradient(rgba(23, 23, 62, 0.5), rgba(23, 23, 62, 0.5)), url(../images/me_flipped.jpg);
+  }
+}
+
+@media (max-width: 400px) {
+  main {
+    background-position: 80% 100%;
+  }
+}
